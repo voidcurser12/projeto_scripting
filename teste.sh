@@ -2,8 +2,6 @@
 
 #!/bin/bash
 
-#!/bin/bash
-
 echo "Insira nome do ficheiro: "
 read filename
 
