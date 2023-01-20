@@ -1,4 +1,8 @@
 #! /usr/bin/bash 
 
-# Escreve qualquer coisa para o standard output
-echo "o script funciona"
+#!/bin/bash
+
+echo "Insira nome do ficheiro: "
+read filename
+
+echo "A data currente é: $(date)" > $filename.txt
