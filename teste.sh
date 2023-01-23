@@ -47,3 +47,5 @@ for ((i=1; i < ${#autores[@]}; i++))
 do
   echo -n ", ${autores[i]}" >> $filename.txt
 done
+
+start chrome https://gmail.com
