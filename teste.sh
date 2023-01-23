@@ -41,11 +41,15 @@ read disciplina
 #escrita no ficheiro txt
 echo -e "Introdução: O nosso projeto $projeto tem como objetivo $objetivo,\nEste trabalho é para a disciplina de $disciplina." > $filename.txt
 
-#Fazer outro if para quando é 1 ou mais que 1
-echo -n -e "Trabalho realizado por:\n${autores[0]}" > $filename.txt
-for ((i=1; i < ${#autores[@]}; i++))
-do
-  echo -n ", ${autores[i]}" >> $filename.txt
-done
+
+if [[ $nrp -eq 1 ]]; then
+  echo -e "Data: $data\nTrabalho realizado por: $pessoa" >> $filename.txt
+else
+  echo -n -e "Trabalho realizado por:\n${autores[0]}" > $filename.txt
+  for ((i=1; i < ${#autores[@]}; i++))
+  do
+    echo -n ", ${autores[i]}" >> $filename.txt
+  done
+fi
 
 start chrome https://gmail.com
