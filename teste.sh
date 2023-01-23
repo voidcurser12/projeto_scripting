@@ -52,4 +52,13 @@ else
   done
 fi
 
+nome_pasta=$(date '+%d-%m-%Y')
+
+if [ ! -d "$nome_pasta" ]; then
+  mkdir $nome_pasta
+  echo "Pasta criada: $nome_pasta"
+fi
+
+cp $filename.txt ~/$nome_pasta
+
 start chrome https://gmail.com
