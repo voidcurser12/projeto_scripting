@@ -3,13 +3,17 @@
 data=$(date '+%d-%m-%Y')
 echo $data
 
+#Nome do ficheiro 
 echo "Insira nome do ficheiro: "
 read filename
 
+#Input do numero de pessoas que fizeram trabalho
 echo "Quantas pessoas fizeram o trabalho:"
 read nrp
 
 autores=()
+
+#Se numero de pessoa maior que 1, então entra no loop e pede inputs até inserir "para", se numero igual a 1 então pede apenas inputs 1x
 if [[ $nrp -gt 1 ]]
 then
     echo "Insira quem fez o trabalho (quando não houver mais elementos do grupo insira 'para'):"
@@ -25,6 +29,7 @@ else
     read pessoa 
 fi
 
+#inputs de informação para inserir no ficheiro 
 echo "Insira o nome do projeto: "
 read projeto
 
@@ -48,13 +53,17 @@ else
   done
 fi
 
+#Define nome da pasta como a data atual
 nome_pasta=$(date '+%d-%m-%Y')
 
+#Verifica se a pasta existe e cria 
 if [ ! -d "$nome_pasta" ]; then
   mkdir $nome_pasta
   echo "Pasta criada: $nome_pasta"
 fi
 
-cp $filename.txt ~/$nome_pasta
+#Copiar ficheiro para dentro da pasta criada 
+cp $filename.txt $nome_pasta
 
+#Abre browser e email
 start chrome https://gmail.com
