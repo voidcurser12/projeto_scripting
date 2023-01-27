@@ -1,5 +1,3 @@
-#! /usr/bin/bash 
-
 #!/bin/bash
 
 data=$(date '+%d-%m-%Y')
@@ -45,10 +43,10 @@ echo -e "Introdução: O nosso projeto $projeto tem como objetivo $objetivo,\nEs
 if [[ $nrp -eq 1 ]]; then
   echo -e "Data: $data\nTrabalho realizado por: $pessoa" >> $filename.txt
 else
-  echo -n -e "Trabalho realizado por:\n${autores[0]}" > $filename.txt
+  echo -e "Trabalho realizado por:\n${autores[0]}" >> $filename.txt
   for ((i=1; i < ${#autores[@]}; i++))
   do
-    echo -n ", ${autores[i]}" >> $filename.txt
+    echo -n "${autores[i]}" >> $filename.txt
   done
 fi
 
