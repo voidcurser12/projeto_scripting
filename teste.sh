@@ -25,8 +25,6 @@ else
     read pessoa 
 fi
 
-echo ${autores[@]}
-
 echo "Insira o nome do projeto: "
 read projeto
 
